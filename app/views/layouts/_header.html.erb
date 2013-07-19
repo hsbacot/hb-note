@@ -1,0 +1,14 @@
+<div class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container" style="width: auto; padding: 0 20px;">
+      <a class="brand" href="/">HB Note</a>
+      <ul class="nav pull-right">
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.username, edit_user_registration_path %></li>
+        <% else %>
+          <li><%= link_to "Sign In", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
