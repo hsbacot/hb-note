@@ -1,2 +1,5 @@
-<h1>Notebooks#edit</h1>
-<p>Find me in app/views/notebooks/edit.html.erb</p>
+<%= simple_form_for @notebook do |f| %>
+  <%= f.input :name, :label => "Untitled notebook" %>
+  <%= f.input :description, :label => "Notebook Contents" %>
+  <%= f.button :submit %>
+<% end %>
