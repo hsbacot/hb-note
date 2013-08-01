@@ -5,6 +5,7 @@ class NotebooksController < ApplicationController
 
   def show
     @notebook = Notebook.find(params[:id])
+    @notes = @notebook.notes
   end
 
   def new

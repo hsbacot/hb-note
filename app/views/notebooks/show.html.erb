@@ -1,2 +1,11 @@
 <%= @notebook.name %><br>
 <%= @notebook.description %>
+
+<h2>Notes</h2>
+<% @notes.each do |note| %>
+	<p>
+		Note title: <%= link_to note.title, note %>
+		<br>
+		Note Content: <%= link_to note.body, note %>
+	</p>
+<% end %>

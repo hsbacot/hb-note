@@ -1,7 +1,7 @@
 class Notebook < ActiveRecord::Base
 
 	belongs_to :user
-	belongs_to :note
+	has_many :notes
 
-	accepts_nested_attributes_for :user, :note
+	accepts_nested_attributes_for :user, :notes
 end

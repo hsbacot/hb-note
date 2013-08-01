@@ -6,8 +6,9 @@ HbNote::Application.routes.draw do
 
   root 'site#index'
 
-  resources :notebooks
-  resources :notes
+  resources :notebooks do
+    resources :notes
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
