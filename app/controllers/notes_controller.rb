@@ -6,6 +6,8 @@ class NotesController < ApplicationController
   end
 
   def new
+    @notebooks = current_user.notebooks.all
+    @note = Note.new
   end
 
   def edit

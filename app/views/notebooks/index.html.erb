@@ -1,10 +1,12 @@
 <h2><%= current_user.username %>'s Notebooks</h2>
 <% @notebooks.each do |notebook| %>
-	<h3>Notebook</h3>
+	<h3>+++++++++++</h3>
 	<p>
 		<%= link_to notebook.name, notebook %>
 		<br>
 		<%= link_to notebook.description, notebook %>
 	</p>
+  <%= link_to "New Note", new_notebook_note_path(notebook),:class => "btn btn-large btn-info"  %>
+  <h3>++++++++++++</h3>
 <% end %>
 

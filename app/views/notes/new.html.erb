@@ -1,2 +1,16 @@
-<h1>Notes#new</h1>
-<p>Find me in app/views/notes/new.html.erb</p>
+<div class="row">
+  <div class="span3">
+    <% @notebooks.each do |notebook| %>
+      <p><%= link_to notebook.name, notebook %></p>
+    <% end %> 
+  </div>
+
+  <div class="span9">
+    <%= simple_form_for notebook_path(@note) do |f| %>
+      <%= f.input :title, :label => "Note Title" %>
+      <%= f.input :body, :label => "Note Context" %>
+      <%= f.input :public, label: "Publish to Blog", :as => :boolean %>
+      <%= f.button :submit, :value => "Submit", :class => "btn btn-large btn-info" %>
+    <% end %>
+  </div>
+</div>

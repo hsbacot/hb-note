@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 	<h1>HB Note</h1>
-	<p>Welcome, <%= current_user.username %></p>
+	<p>Welcome, <%= current_user.username.capitalize %></p>
 	<%= link_to "Create a Notebook", new_notebook_path, :class => "btn btn-large btn-info" %> 
 <% else %>
 <h1>HB Note</h1>

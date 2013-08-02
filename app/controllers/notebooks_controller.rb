@@ -19,7 +19,7 @@ class NotebooksController < ApplicationController
   def create
     @notebook = current_user.notebooks.new(notebook_params)
     if @notebook.save
-      redirect_to @notebook, notice: "Notebook successfully created"
+      redirect_to notebooks_path, notice: "Notebook successfully created"
     else
       redirect_to root_path
     end
