@@ -1,8 +1,6 @@
 <div class="row">
-  <div class="span3">
-    <% @notebooks.each do |notebook| %>
-      <p><%= link_to notebook.name, notebook %></p>
-    <% end %> 
+  <div class="span3 my-notes">
+    <%= render "/notebooks/notebooks" %>
   </div>
 
   <div class="span9">

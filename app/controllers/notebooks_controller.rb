@@ -10,6 +10,8 @@ class NotebooksController < ApplicationController
 
   def new
     @notebook = current_user.notebooks.new
+    # all notebooks for current user
+    @notebooks = current_user.notebooks.all
   end
 
   def edit
