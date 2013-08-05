@@ -1,6 +1,6 @@
-<h3>My Notebooks</h3>
+<h3>Notebooks</h3>
   <% @notebooks.each do |notebook| %>
 	  <% if notebook.name.present? %>
-	    <p><%= link_to notebook.name, notebook %></p>
+	    <p><%= link_to "#{notebook.name} (#{notebook.notes.count})", notebook %></p>
     <% end %>
   <% end %>

@@ -1,9 +1,15 @@
 class NotebooksController < ApplicationController
+
+
+  # user_notebooks = @notebooks = current_user.notebooks.all
+  # dont use @notebooks
+
   def index
-    @notebooks = current_user.notebooks.all
+    user_notebooks
   end
 
   def show
+    user_notebooks
     @notebook = Notebook.find(params[:id])
     @notes = @notebook.notes
   end
@@ -11,10 +17,11 @@ class NotebooksController < ApplicationController
   def new
     @notebook = current_user.notebooks.new
     # all notebooks for current user
-    @notebooks = current_user.notebooks.all
+    user_notebooks
   end
 
   def edit
+    user_notebooks
     @notebook = current_user.notebooks.find(params[:id])
   end
 

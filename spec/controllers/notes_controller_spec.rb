@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe NotesController do
 
-  describe "GET 'index'" do
+  describe "Note index" do
     it "returns http success" do
       get 'index'
       response.should be_success
@@ -16,9 +16,9 @@ describe NotesController do
     end
   end
 
-  describe "GET 'new'" do
-    it "returns http success" do
-      get 'new'
+  describe "New Note" do
+    it "should create a new note" do
+      note = Factory(:note, )
       response.should be_success
     end
   end
