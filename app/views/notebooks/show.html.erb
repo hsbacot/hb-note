@@ -1,14 +1,17 @@
 
 <% if @notebook.notes.present? %>
 	<h2>Notes</h2>
-	<% @notes.each do |note| %>
-		<p>
-			Note title: <%= link_to note.title, note %>
-			<br>
-			Note Content: <%= link_to note.body, note %>
-		</p>
+	<%= link_to "New Note", new_notebook_note_path(@notebook),:class => "btn btn-large btn-info" %>
+	<br>
+	<% @notebook.notes.each do |note| %>
+	<div class="note-index">
+		<h3>+++++++++++</h3>
+				<h4><%= link_to note.title, notebook_note_path(@notebook, note) %></h4>
+				<p><%= link_to truncate(note.body, :length => 20), notebook_note_path(@notebook, note) %>
+			</p>
+		<h3>+++++++++++</h3>
+	</div>
 	<% end %>
-		<%= link_to "New Note", new_notebook_note_path(notebook),:class => "btn btn-large btn-info"  %>
 <% else %>
 	<h2>This Notebook has no notes</h2>
 	<%= link_to "New Note", new_notebook_note_path(@notebook),:class => "btn btn-large btn-info"  %>

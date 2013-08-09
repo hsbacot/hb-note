@@ -5,7 +5,7 @@
 
   <div class="span9">
     <h3><%= @notebook.name %><h3>
-    <%= simple_form_for notebook_path(@note) do |f| %>
+    <%= simple_form_for [@notebook, @note] do |f| %>
       <%= f.input :title, :label => "Note Title" %>
       <%= f.input :body, :label => "Note Context" %>
       <%= f.input :public, label: "Publish to Blog", :as => :boolean %>
@@ -13,6 +13,6 @@
     <% end %>
 
     <%= params.inspect %>
-    
+
   </div>
 </div>
