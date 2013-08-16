@@ -1,9 +1,12 @@
 HbNote::Application.routes.draw do
   
 
+  get "blog/index"
+  get "blog/show"
   devise_for :users
   get "site/index"
 
+  # root :to => "notebooks#index", :constraints => {user_signed_in?}
   root 'site#index'
 
   resources :notebooks do

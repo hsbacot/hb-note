@@ -1,8 +1,10 @@
 class NotebooksController < ApplicationController
 
+  layout "with_notebooks"
 
   # user_notebooks = @notebooks = current_user.notebooks.all
   # dont use @notebooks
+
 
   def index
     user_notebooks

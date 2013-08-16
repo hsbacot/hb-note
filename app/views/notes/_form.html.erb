@@ -1,0 +1,6 @@
+<%= simple_form_for [@notebook, @note] do |f| %>
+      <%= f.input :title, :label => "Note Title" %>
+      <%= f.input :body, :label => "Note Context" %>
+      <%= f.input :public, label: "Publish to Blog", :as => :boolean %>
+      <%= f.button :submit, :value => "Submit", :class => "btn btn-large btn-info" %>
+      <% end %>

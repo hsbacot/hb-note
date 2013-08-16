@@ -1,18 +1,2 @@
-<div class="row">
-  <div class="span3 my-notes">
-    <%= render "/notebooks/notebooks" %>
-  </div>
-
-  <div class="span9">
-    <h3><%= @notebook.name %><h3>
-    <%= simple_form_for [@notebook, @note] do |f| %>
-      <%= f.input :title, :label => "Note Title" %>
-      <%= f.input :body, :label => "Note Context" %>
-      <%= f.input :public, label: "Publish to Blog", :as => :boolean %>
-      <%= f.button :submit, :value => "Submit", :class => "btn btn-large btn-info" %>
-    <% end %>
-
-    <%= params.inspect %>
-
-  </div>
-</div>
+<h3><%= @notebook.name %><h3>
+<%= render "form" %>

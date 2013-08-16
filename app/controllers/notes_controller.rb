@@ -1,5 +1,7 @@
 class NotesController < ApplicationController
 
+  layout "with_notebooks"
+  
   # user_notebooks = @notebooks = current_user.notebooks.all
   # dont use @notebooks
 
@@ -21,6 +23,8 @@ class NotesController < ApplicationController
 
   def edit
     user_notebooks
+    @notebook = current_user.notebooks.find(params[:id])
+    @note = Note.find(params[:id])
   end
 
   def create
@@ -35,6 +39,13 @@ class NotesController < ApplicationController
   end
 
   def update
+    @notebook = current_user.notebooks.find(params[:id])
+    @note = Note.find(params[:id])
+    if @note.update_attributes(note_params)
+      redirect_to notebook_note_path(@notebook, @note), notice: "Note successfully updated"
+    else
+      redirect_to notebook_note_path(@notebook, @note), notice: "There was an error updating your note"
+    end
   end
 
   def destroy

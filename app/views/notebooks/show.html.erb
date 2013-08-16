@@ -1,4 +1,3 @@
-
 <% if @notebook.notes.present? %>
 	<h2>Notes</h2>
 	<%= link_to "New Note", new_notebook_note_path(@notebook),:class => "btn btn-large btn-info" %>
@@ -16,3 +15,5 @@
 	<h2>This Notebook has no notes</h2>
 	<%= link_to "New Note", new_notebook_note_path(@notebook),:class => "btn btn-large btn-info"  %>
 <% end %>
+
+

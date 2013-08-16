@@ -1,7 +1,11 @@
 <div class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container" style="width: auto; padding: 0 20px;">
-      <a class="brand" href="/">HB Note</a>
+      <% if user_signed_in? %>
+        <%= link_to "HB Note", notebooks_path, :class => "brand" %>
+      <% else %>
+        <a class="brand" href="/">HB Note</a>
+      <% end %>
       <!-- <div class="nav-collapse collapse navbar-responsive-collapse"> -->
         <ul class="nav pull-right">
           <% if user_signed_in? %>
