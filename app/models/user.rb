@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
 
+  ROLES = %w[admin moderator]
+
   has_many :notebooks
   has_many :notes, through: :notebooks
   
