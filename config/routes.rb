@@ -1,6 +1,10 @@
 HbNote::Application.routes.draw do
   
 
+  get "admin/index"
+  get "/admin", to: "admin#index"
+  get "admin/users"
+  get "admin/post"
   # NEED TO CHANGE TO USERNAME
   get "/blog/:id", to: "blog#index"
   # get "/blog/:id/d" to: "blog#show"
