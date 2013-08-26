@@ -4,11 +4,18 @@ class AdminController < ApplicationController
 
 
   def index
+    @users = User.all
   end
 
-  def users
+  def user
+    @user = User.find_by_username(params[:username])
   end
 
   def post
   end
+
+  private
+    def admin_params
+      params.require(:admin).permit(:id)
+    end
 end
