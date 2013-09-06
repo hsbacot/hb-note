@@ -9,6 +9,7 @@ class AdminController < ApplicationController
 
   def user
     @user = User.find_by_username(params[:username])
+    @posts = @user.notes.where(:public => true)
   end
 
   def post
@@ -16,6 +17,6 @@ class AdminController < ApplicationController
 
   private
     def admin_params
-      params.require(:admin).permit(:id)
+      params.require(:admin).permit(:username)
     end
 end

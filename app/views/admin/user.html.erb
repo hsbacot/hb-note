@@ -1,4 +1,23 @@
 <h1>Moderate <%= @user.username %></h1>
-<% simple_form_for @user do |f| %>
-  <%= f.input :banned %>
-  <% end %>
+<% if @posts.empty? %>
+  <h3>The User has no public posts</h3>
+<% else %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Post Title</th>
+          <th>Allowed to publish?</th>
+          <th>Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.title %></td>
+          <td><%= post.publishable? %></td>
+          <td><%= link_to "Ban", "", :class => "btn btn-info", :method => :put, :publishable => false %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>

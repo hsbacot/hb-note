@@ -13,7 +13,7 @@ describe "Home Page" do
 
   it "should have an admin link if the user is an admin" do
     visit root_path
-    
+
   end
 end
 
@@ -25,7 +25,7 @@ describe "Sign Up Page" do
 
 	it "should have a username field" do
 		visit new_user_registration_path
-		expect(page).to have_field("username")
+		expect(page).to have_field("user_username")
 	end
 end
 

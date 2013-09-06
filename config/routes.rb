@@ -7,6 +7,7 @@ HbNote::Application.routes.draw do
   get "admin/post"
   # NEED TO CHANGE TO USERNAME
   get "/blog/:username", to: "blog#index"
+  put "admin/:username"
   # get "/blog/:id/d" to: "blog#show"
   get "blog/show"
   devise_for :users
