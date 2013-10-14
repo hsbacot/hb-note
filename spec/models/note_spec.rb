@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Note do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should belong to a notebook"
+  it "should belong to a user"
+  it "should set publishable to false when ban is clicked"
 end

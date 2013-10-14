@@ -15,6 +15,14 @@ class AdminController < ApplicationController
   def post
   end
 
+  def update
+    @post = Note.find(params[:id])
+    @post.publishable = false
+    @post.update_column
+    redirect_to :back
+    flash[:notice] = "User Viewable setting has been changed"
+  end
+
   private
     def admin_params
       params.require(:admin).permit(:username)

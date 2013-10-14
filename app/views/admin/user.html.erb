@@ -13,9 +13,9 @@
       <tbody>
         <% @posts.each do |post| %>
         <tr>
-          <td><%= post.title %></td>
+          <td><%= post.title %> post id => <%= post.id %></td>
           <td><%= post.publishable? %></td>
-          <td><%= link_to "Ban", "", :class => "btn btn-info", :method => :put, :publishable => false %></td>
+          <td><%= button_to "Ban", admin_ban_path(post), :class => "btn btn-info", :method => :patch %></td>
         </tr>
         <% end %>
       </tbody>
