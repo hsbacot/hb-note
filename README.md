@@ -2,4 +2,6 @@
 
 ### by Hunter Bacot
 
-An evernote clone in rails to allow me to learn TDD with rspec and ultimately further my ajax knowledge.=
+An evernote clone in rails to allow me to pay with Rails 4
+
+Online at ____coming soon____
