@@ -6,7 +6,7 @@
 	<div class="note-index">
 		<h3>+++++++++++</h3>
 				<h4><%= link_to note.title, notebook_note_path(@notebook, note) %></h4>
-				<p><%= link_to truncate(note.body, :length => 20), notebook_note_path(@notebook, note) %>
+				<p><%= link_to markdown(truncate(note.body, :length => 20)), notebook_note_path(@notebook, note) %>
 			</p>
 		<h3>+++++++++++</h3>
 	</div>

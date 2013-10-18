@@ -1,5 +1,6 @@
+
 <%= simple_form_for @notebook do |f| %>
   <%= f.input :name, :label => "Untitled notebook" %>
   <%= f.input :description, :label => "Notebook Contents" %>
-  <%= f.button :submit %>
+  <%= f.button :submit, :class => "btn btn-large btn-info" %>
 <% end %>

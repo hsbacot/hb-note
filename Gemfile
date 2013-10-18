@@ -11,6 +11,7 @@ gem 'redcarpet'
 gem 'simple_form'
 gem 'devise'
 gem 'cancan'
+gem 'hallo_rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

@@ -3,7 +3,7 @@
 <%= link_to "Edit Note", edit_notebook_note_path( @notebook, @note), :class => "btn btn-large btn-info" %>
 <br>
 <br>
-<p><%= @note.body %></p>
+<p><%= markdown(@note.body) %></p>
 
 
 
